@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+It makes use of TypeScript, React Hooks, the Material-UI library, FontAwesome and axios.
+
 This project is a single page web application which allows users to 'request an invitation' via a form in a modal.
 
 Users are able to click a CTA, which then opens a modal containing a form. The form requires 'name', 'email' and confirm email' to be filled in.
@@ -11,6 +13,8 @@ This form performs validation, which will display any errors to the user and pre
 If all validation is passed, the form makes a mock API, during this mock API call a loading state is displayed. The modal is then closed.
 
 The form contains keyboard focus accessibility.
+
+# I DREW THE OTTER MYSELF :-]
 
 ## Available Scripts
 
