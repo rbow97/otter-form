@@ -16,7 +16,8 @@ const useForm = ({setOpen}: IProps) => {
     const [emailError, setEmailError] = useState<string>('');
     const [matchingEmailsError, setMatchingEmailsError] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false);
-    const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false)
+    const [snackbarOpen, setSnackbarOpen] = useState<boolean>(false);
+    const [success, setSuccess] = useState<boolean>(false);
 
     const onChange = (e: any): void => {
         setFormData({
@@ -55,13 +56,14 @@ const useForm = ({setOpen}: IProps) => {
       };
     
       const handleClose = (): void => {
+        handleErrors()
+        setOpen(false)
+        setSuccess(false)
         setFormData({
           fullName: '',
           email: '',
           confirmEmail: ''
         })
-        handleErrors()
-        setOpen(false)
       }
     
       const handleSubmit = (formData: IFormValues): void => {
@@ -75,8 +77,8 @@ const useForm = ({setOpen}: IProps) => {
           // Error handling to let user know if their email wasn't sent
           try {
             await postEmail(formData);
-            setOpen(false);
             setFormData({fullName: '', email: '', confirmEmail: ''});
+            setSuccess(true)
           } catch {
             setSnackbarOpen(true);
           }
@@ -94,6 +96,7 @@ const useForm = ({setOpen}: IProps) => {
         matchingEmailsError,
         formData,
         loading,
+        success,
     }
 }
 

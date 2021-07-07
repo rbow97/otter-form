@@ -39,7 +39,8 @@ const Form: React.FC<IProps> = (props: IProps) => {
     emailError,
     matchingEmailsError,
     formData,
-    loading
+    loading,
+    success,
   } = useForm({
     setOpen
   })
@@ -62,7 +63,10 @@ const Form: React.FC<IProps> = (props: IProps) => {
         >
           <Fade in={open}>
             <div className={classes.form}>
-              <span>Request an invite</span>
+              <span>{success ? 'All done!' : 'Request an invite'}</span>
+              {
+                !success
+                ? <>
               <TextField
                 onChange={(e) => onChange(e)}
                 id='fullName'
@@ -122,6 +126,17 @@ const Form: React.FC<IProps> = (props: IProps) => {
                 {/* Loading message added for asynchronous event signalling to the user that they should wait */}
                 {loading ? 'Sending Email...' : 'Send'}
               </button>
+              </>
+              : 
+              (
+                <>
+                  <span className={classes.completeText}>
+                    You will be one of the first to be notified when we launch!
+                    </span>
+                  <button onClick={() => handleClose()}>OK</button>
+                </>
+              )
+              }
             </div>
           </Fade>
         </Modal>

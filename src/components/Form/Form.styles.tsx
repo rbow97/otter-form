@@ -15,8 +15,13 @@ const useStyles = makeStyles(
             boxShadow: theme.shadows[5],
             padding: '40px 70px',
             fontFamily: 'Poppins',
-            '& > span': {
+            '& > span:first-child': {
                 fontSize: 20,
+                marginBottom: 24,
+                alignSelf: 'center'
+            },
+            '& span:last-child': {
+                fontSize: 16,
                 marginBottom: 24,
                 alignSelf: 'center'
             },
@@ -49,6 +54,10 @@ const useStyles = makeStyles(
                     backgroundColor: 'midnightBlue'
                   }
             }
+        },
+        completeText: {
+            fontSize: 14,
+            marginBottom: 24,
         }
     })
 );
