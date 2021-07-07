@@ -10,7 +10,9 @@ Users are able to click a CTA, which then opens a modal containing a form. The f
 
 This form performs validation, which will display any errors to the user and prevent the form from being completed.
 
-If all validation is passed, the form makes a mock API, during this mock API call a loading state is displayed. The modal is then closed.
+If all validation is passed, the form makes a mock API, during this mock API call a loading state is displayed.
+
+The modal then displays a success message which allows the user to close it via a CTA.
 
 The form contains keyboard focus accessibility.
 
