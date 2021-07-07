@@ -48,6 +48,7 @@ const Form: React.FC<IProps> = (props: IProps) => {
 
     return (
       <>
+      {/* Modal which includes ability to click outside/escape key to escape, and clear focus on each element for accessibility */}
         <Modal
           data-testid='modal'
           open={open}
@@ -115,8 +116,10 @@ const Form: React.FC<IProps> = (props: IProps) => {
               />
               <button
               type='submit'
+              // Button is disabled during loading
               disabled={loading}
               onClick={() => handleSubmit(formData)}>
+                {/* Loading message added for asynchronous event signalling to the user that they should wait */}
                 {loading ? 'Sending Email...' : 'Send'}
               </button>
             </div>

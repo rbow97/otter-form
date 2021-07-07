@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import { IFormValues } from '../components/Form/Form';
 import postEmail from '../services/api';
 
