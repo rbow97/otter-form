@@ -1,18 +1,20 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import App from './App';
+import Home from './Home';
 
-describe('App', () => {
+describe('Home', () => {
   it('should match snapshot', () => {
     const {container} = render(
-      <App />
+      <Home />
     );
     expect(container).toMatchSnapshot();
   });
   it('should render without error', () => {
+      const renderedText = 'Copywrite 2020 Otter Limited'
     const {container} = render(
-      <App/>
+      <Home/>
     )
-    expect(container).toBeInstanceOf(HTMLElement)
-  })
+    expect(container).toBeInstanceOf(HTMLElement);
+    expect(renderedText).toBeTruthy();
+  });
 })
