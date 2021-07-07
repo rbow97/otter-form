@@ -66,67 +66,69 @@ const Form: React.FC<IProps> = (props: IProps) => {
               <span>{success ? 'All done!' : 'Request an invite'}</span>
               {
                 !success
-                ? <>
-              <TextField
-                onChange={(e) => onChange(e)}
-                id='fullName'
-                name='fullName'
-                type='text'
-                value={fullName}
-                error={nameError.length > 0}
-                helperText={nameError}
-                placeholder='Full Name'
-                  InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <FontAwesomeIcon icon={faUser} />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-              <TextField
-                onChange={(e) => onChange(e)}
-                id='email'
-                name='email'
-                type='email'
-                error={emailError.length > 0}
-                helperText={emailError}
-                value={email}
-                placeholder='Email'
-                  InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <FontAwesomeIcon icon={faUser} />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-              <TextField
-                onChange={(e) => onChange(e)}
-                id='confirmEmail'
-                name='confirmEmail'
-                type='email'
-                error={matchingEmailsError.length > 0}
-                helperText={matchingEmailsError}
-                value={confirmEmail}
-                placeholder='Confirm Email'
-                  InputProps={{
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <FontAwesomeIcon icon={faUser} />
-                    </InputAdornment>
-                  ),
-                }}
-              />
-              <button
-              type='submit'
-              // Button is disabled during loading
-              disabled={loading}
-              onClick={() => handleSubmit(formData)}>
-                {/* Loading message added for asynchronous event signalling to the user that they should wait */}
-                {loading ? 'Sending Email...' : 'Send'}
-              </button>
-              </>
+                ?
+                 (<>
+                    <TextField
+                      onChange={(e) => onChange(e)}
+                      id='fullName'
+                      name='fullName'
+                      type='text'
+                      value={fullName}
+                      error={nameError.length > 0}
+                      helperText={nameError}
+                      placeholder='Full Name'
+                        InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <FontAwesomeIcon icon={faUser} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      onChange={(e) => onChange(e)}
+                      id='email'
+                      name='email'
+                      type='email'
+                      error={emailError.length > 0}
+                      helperText={emailError}
+                      value={email}
+                      placeholder='Email'
+                        InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <FontAwesomeIcon icon={faUser} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    <TextField
+                      onChange={(e) => onChange(e)}
+                      id='confirmEmail'
+                      name='confirmEmail'
+                      type='email'
+                      error={matchingEmailsError.length > 0}
+                      helperText={matchingEmailsError}
+                      value={confirmEmail}
+                      placeholder='Confirm Email'
+                        InputProps={{
+                        startAdornment: (
+                          <InputAdornment position="start">
+                            <FontAwesomeIcon icon={faUser} />
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                    <button
+                      type='submit'
+                      // Button is disabled during loading
+                      disabled={loading}
+                      onClick={() => handleSubmit(formData)}
+                    >
+                      {/* Loading message added for asynchronous event signalling to the user that they should wait */}
+                      {loading ? 'Sending Email...' : 'Send'}
+                    </button>
+              </>)
               : 
               (
                 <>
